@@ -17,15 +17,18 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) & isOnGrand)
         {
             rb.AddForce(new Vector2(0, 100f));
-            Debug.Log("‚â‚ ");
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(1f, rb.velocity.y);
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-1f, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y);
         }
         this.isOnGrand = gc.GetComponent<GroundCheck>().isGround();
     }

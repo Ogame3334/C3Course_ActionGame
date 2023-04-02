@@ -1227,7 +1227,7 @@ GameObject:
   - component: {fileID: 1685255527}
   - component: {fileID: 1685255526}
   m_Layer: 0
-  m_Name: GroundCHeck
+  m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject gc;
+    [SerializeField] private Canvas cv;
     private bool isOnGrand = true;
     private void Start()
     {
@@ -31,5 +32,14 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(0f, rb.velocity.y);
         }
         this.isOnGrand = gc.GetComponent<GroundCheck>().isGround();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("GoalFlag"))
+        {
+            cv.enabled = true;
+            Time.timeScale = 0;
+        }
     }
 }
